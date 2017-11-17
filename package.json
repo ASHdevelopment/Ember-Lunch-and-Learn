@@ -1,9 +1,8 @@
 {
-  "name": "Ember-Lunch-and-Learn",
+  "name": "ember-lunch-and-learn",
   "version": "0.0.0",
   "description": "ASH Bi-Weekly Ember-Lunch-and-Learn",
-  "license": "MIT",
-  "author": "",
+  "author": "ASH",
   "directories": {
     "doc": "doc",
     "test": "tests"

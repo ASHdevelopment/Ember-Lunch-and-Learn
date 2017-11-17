@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'lunch-learn',
+    modulePrefix: 'ember-lunch-and-learn',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
