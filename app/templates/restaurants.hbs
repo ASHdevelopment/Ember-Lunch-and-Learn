@@ -1,6 +1,17 @@
 <h3>Restaurants</h3>
 <ul>
     {{#each model as |r|}}
-        <li>{{r}}</li>
+        <li>
+            {{r.name}} ({{r.price}})
+            <button onclick={{action 'toggleFav' r.name}}>toggleFav</button>
+            <button onclick={{action 'increasePrice' r.name}}>increasePrice</button>
+            <button onclick={{action 'decreasePrice' r.name}}>decreasePrice</button>
+        </li>
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each favorites as |f|}}
+        <li>{{f.name}} ({{f.price}})</li>
     {{/each}}
 </ul>
