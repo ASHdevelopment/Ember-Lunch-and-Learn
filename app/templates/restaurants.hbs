@@ -5,6 +5,7 @@
             {{r.name}} ({{r.price}})
             <button onclick={{action 'toggleFav' r.name}}>toggleFav</button>
             <button onclick={{action 'increasePrice' r.name}}>increasePrice</button>
+            <button onclick={{action 'decreasePrice' r.name}}>decreasePrice</button>
         </li>
     {{/each}}
 </ul>

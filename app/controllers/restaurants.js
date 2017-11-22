@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
     //   return restaurants.filter(restaurant =>{
     //       return restaurant.favorite === true;
     //   })
-    // })
+    // }),
     //but but knowing the different methods, you can easily create computeds like this
     favorites:computed.filterBy('model', 'favorite'),
     actions:{
@@ -35,7 +35,7 @@ export default Ember.Controller.extend({
         },
         increasePrice(name){
             const model = get(this, 'model');
-            //loop through each restaurant and if name matches what was passed into the action, incrase the price
+            //loop through each restaurant and if name matches what was passed into the action, increase the price
             model.forEach(r => {
                 if(isEqual(get(r, 'name'), name)){
                     r.incrementProperty('price')
@@ -46,5 +46,20 @@ export default Ember.Controller.extend({
                 }
             })
         },
+        decreasePrice(name){
+            const model = get(this, 'model');
+            //loop through each restaurant and if name matches what was passed into the action, decrease the price
+            model.forEach(r => {
+                if(isEqual(get(r, 'name'), name)){
+                    if(get(r, 'price') > 0) {
+                        r.decrementProperty('price');
+                    
+                        // let p = get(r, 'price');
+                        // p--;
+                        // r.set('price', p);
+                    }
+                }
+            })
+        }
     }
 });
