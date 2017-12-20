@@ -6,21 +6,16 @@ This assumes you've gone through ASH's Ember setup documentation. If you have no
 To get started, clone this repo locally and `ember init`. Each branch will take you through subsequent steps.
 
 ## Latest Session Challenges
-1. Generate a new controller `ember g controller restaurants`
-1. Update the restaurants route so `model` now returns an array of objects with properties of `name`, `price`, and `favorite`
-1. Add a `favorites` computed that only shows restaurants that are favorited. Add a corresponding favorites list in the `restaraurants` template
-1. Add buttons for and actions to toggle favorite status, increase, and decrease price of each restaurant. You should see this in the browser; and if you increase/decrease price, you should see the price changing in the regular list AND favorites list.
-1. (optional) Added unit tests for the controller actions
+1. Add a `hotels` route because now our app can show a list of hotels! Hard-code a POJO of 3 hotels
+1. Add a list of hotels in the hotels template (you can use the restaurants list). Now any updates to our list of locations will need updated multiple times, meaning our code is not DRY. So...
+1. `ember g component location-list` and use this component in the `restaurants` and `hotels` route
+1. `ember g component location-list/item` to create a component for each list item and allow for granular control over each item
+1. Move your actions and properties from the restaurants `controller` into the appropriate `component`. The moved actions needs to travel all the way up to the route (through the controller).
 
 ## Latest Session Recap
-1. What's the difference between a `controller` and `route`?
-1. What are computeds? Why are they useful? What are some useful computed methods built into Ember?
-1. How do you watch a specific property of an array in a computed (e.g., `favorite`)? How about watching if an item has been added or removed from the array?
-1. What are actions? How do you pass parameters to an action?
-1. What do the following do:
-    1. `toggleProperty`
-    1. `incrementProperty`
-    1. `decrementProperty`
+1. What's the difference between a `controller` and `component`?
+1. How do you add a component to a template?
+1. Can components be nested inside of each other?
 
 
 ## Initial Setup (cloning this repo)
@@ -31,6 +26,7 @@ To get started, clone this repo locally and `ember init`. Each branch will take 
 1. `ember init`. Do not overwrite any of the files when prompted.
 1. If this is **NOT** your first time working in this project and you want to preserve the work you've already done, only select `Yes` to overwrite the following files: `app/index.html`, `test/index.html`, `config/environment.js`, `package.json`, `bower.json`, and `README.md`.
 1. `ember s` will start the project locally in `http://localhost:4200`. Open [http://localhost:4200](http://localhost:4200) to make sure it's working. 
+
 
 ## Shorthand
 `ember g` = `ember generate`  
