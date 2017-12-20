@@ -1,8 +1,6 @@
 import Ember from 'ember';
 
 const{
-    get,
-    isEqual,
     computed
 } = Ember;
 

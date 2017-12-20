@@ -20,16 +20,11 @@ export default Ember.Route.extend({
             }
         ]
 
-        //we need to convert the array of restaurants into an ember object so we can get() and set() later
+        //we need to convert the array of hotels into an ember object so we can get() and set() later
         const arrObjs = arr.map(a => {
             return Ember.Object.create(a)
         });
 
-        // let mcDonalds = Ember.Object.create({name: 'McDonalds', price: 1, favorite: true});
-        // let rubios = Ember.Object.create({name: 'Rubios', price: 3, favorite: false});
-        // let pizzaHut = Ember.Object.create({name: 'Pizza Hut', price: 2, favorite: true});
-
-        // let arrObjs = [mcDonalds, rubios, pizzaHut];
 
         return arrObjs;
     }

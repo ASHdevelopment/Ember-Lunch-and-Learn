@@ -25,12 +25,6 @@ export default Ember.Route.extend({
             return Ember.Object.create(a)
         });
 
-        // let mcDonalds = Ember.Object.create({name: 'McDonalds', price: 1, favorite: true});
-        // let rubios = Ember.Object.create({name: 'Rubios', price: 3, favorite: false});
-        // let pizzaHut = Ember.Object.create({name: 'Pizza Hut', price: 2, favorite: true});
-
-        // let arrObjs = [mcDonalds, rubios, pizzaHut];
-
         return arrObjs;
     }
 });

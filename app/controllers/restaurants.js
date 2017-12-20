@@ -7,14 +7,6 @@ const{
 } = Ember;
 
 export default Ember.Controller.extend({
-    //without using all the different computed methods, you would have to write some logic like this
-    // favorites:computed('model.@each.favorite', function(){
-    //   let restaurants = get(this, 'model');
-    //   return restaurants.filter(restaurant =>{
-    //       return restaurant.favorite === true;
-    //   })
-    // }),
-    //but but knowing the different methods, you can easily create computeds like this
     favorites:computed.filterBy('model', 'favorite'),
     actions:{
         //toggle the favorite property of a restaurant
@@ -24,12 +16,6 @@ export default Ember.Controller.extend({
             model.forEach(r => {
                 if(isEqual(get(r, 'name'), name)){
                     r.toggleProperty('favorite')
-
-                    // if(get(r, 'favorite') == true) {
-                    //     r.set('favorite', false);
-                    // }else{
-                    //     r.set('favorite', true);
-                    // }
                 }
             })
         },
@@ -53,10 +39,6 @@ export default Ember.Controller.extend({
                 if(isEqual(get(r, 'name'), name)){
                     if(get(r, 'price') > 0) {
                         r.decrementProperty('price');
-                    
-                        // let p = get(r, 'price');
-                        // p--;
-                        // r.set('price', p);
                     }
                 }
             })
