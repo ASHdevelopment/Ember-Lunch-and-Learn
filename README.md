@@ -9,8 +9,9 @@ To get started, clone this repo locally and `ember init`. Each branch will take 
 1. Add a `hotels` route because now our app can show a list of hotels! Hard-code a POJO of 3 hotels
 1. Add a list of hotels in the hotels template (you can use the restaurants list). Now any updates to our list of locations will need updated multiple times, meaning our code is not DRY. So...
 1. `ember g component location-list` and use this component in the `restaurants` and `hotels` route
-1. `ember g component location-list/item` to create a component for each list item and allow for granular control over each item
-1. Move your actions and properties from the restaurants `controller` into the appropriate `component`. The moved actions needs to travel all the way up to the route (through the controller).
+1. Move your actions from the restaurants `controller` into our new component. 
+1. `restaurants` and `hotels` should both use the new component for the main list and favorites list.
+
 
 ## Latest Session Recap
 1. What's the difference between a `controller` and `component`?
