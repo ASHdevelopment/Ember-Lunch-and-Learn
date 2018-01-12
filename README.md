@@ -6,17 +6,17 @@ This assumes you've gone through ASH's Ember setup documentation. If you have no
 To get started, clone this repo locally and `ember init`. Each branch will take you through subsequent steps.
 
 ## Latest Session Challenges
-1. Add a `hotels` route because now our app can show a list of hotels! Hard-code a POJO of 3 hotels
-1. Add a list of hotels in the hotels template (you can use the restaurants list). Now any updates to our list of locations will need updated multiple times, meaning our code is not DRY. So...
-1. `ember g component location-list` and use this component in the `restaurants` and `hotels` route
-1. Move your actions from the restaurants `controller` into our new component. 
-1. `restaurants` and `hotels` should both use the new component for the main list and favorites list.
+1. **Homework from last session**: convert `restaurants` template to use the new components from the previous session.
+1. Add a `details` property on each hotel and restaurant. And add a button to show/hide details within a newly created `location-list-item` component.
+1. If `showDetails` is true, add a class `showingDetails` that highlights the item with a yellow background.
+1. Insert an "Order Now" link that links to an `orders.new` route (you will have to generate this). Do this only for restaurants. You will need to pass an `allowOrders` property into `location-list`, which determines if this link displays. Use the `yield` helper in `location-list-item` to insert this link after the `price` property. Make sure that the route for `orders` uses a dynamic segment to dispaly "Place an Order for [dynamicLocationName]". You will need to revisit routes to do this: https://guides.emberjs.com/v2.12.0/routing/specifying-a-routes-model/#toc_dynamic-models.
+1. Components should follow data-down, actions-up so do not modify the price and favorite properties on the locations in the component. The route should handle that. Show/hide details is fine in the component because the `showDetails` property live in the component, not higher up in the app.
 
 
 ## Latest Session Recap
-1. What's the difference between a `controller` and `component`?
-1. How do you add a component to a template?
-1. Can components be nested inside of each other?
+1. How do you force toggling class based on a property change? 
+1. What is the difference between `output` and `yield`?
+1. What is a dynamic segment route?
 
 
 ## Initial Setup (cloning this repo)
