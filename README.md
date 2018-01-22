@@ -6,10 +6,12 @@ This assumes you've gone through ASH's Ember setup documentation. If you have no
 To get started, clone this repo locally and `ember init`. Each branch will take you through subsequent steps.
 
 ## Latest Session Challenges
-1. **Homework from last session**: convert `restaurants` template to use the new components from the previous session.
-1. Add a `details` property on each hotel and restaurant. And add a button to show/hide details within a newly created `location-list-item` component.
+1. **Homework from last session**: convert `restaurants` template to use the new components from the previous session. Hint: your `restaurants` controller should only have one property now, since you are using the properties on the new components.
+1. Generate a new `location-list-item` component. Make sure the `tagName` property is an `li`, not `div` as set by default. 
+1. Make sure your `{{#each}}` block in `location-list` adds a new instance of `location-list-item` for each location, then move the location details (e.g., name, price) to the new template. You'll need to comment ou the buttons for now to avoid errors.
+1. Add a `details` property on each hotel and restaurant's model (in the `routes` folder). Then add a button to show/hide details within a newly created `location-list-item` component.
 1. If `showDetails` is true, add a class `showingDetails` that highlights the item with a yellow background.
-1. Insert an "Order Now" link that links to an `orders.new` route (you will have to generate this). Do this only for restaurants. You will need to pass an `allowOrders` property into `location-list`, which determines if this link displays. Use the `yield` helper in `location-list-item` to insert this link after the `price` property. Make sure that the route for `orders` uses a dynamic segment to dispaly "Place an Order for [dynamicLocationName]". You will need to revisit routes to do this: https://guides.emberjs.com/v2.12.0/routing/specifying-a-routes-model/#toc_dynamic-models.
+1. Insert an "Order Now" link that links to an `orders.new` route (you will have to generate this). Do this only for restaurants. You will need to pass an `allowOrders` property into `location-list`, which determines if this link displays. Use the `yield` helper in `location-list-item` to insert this link after the `price` property. Make sure that the route for `orders` uses a dynamic segment to display "Place an Order for [dynamicLocationName]". You will need to revisit routes to do this: https://guides.emberjs.com/v2.12.0/routing/specifying-a-routes-model/#toc_dynamic-models.
 1. Components should follow data-down, actions-up so do not modify the price and favorite properties on the locations in the component. The route should handle that. Show/hide details is fine in the component because the `showDetails` property live in the component, not higher up in the app.
 
 
