@@ -17,7 +17,7 @@ To get started, clone this repo locally and `ember init`. Each branch will take 
 
 ## Latest Session Recap
 1. How do you force toggling class based on a property change? 
-1. What is the difference between `output` and `yield`?
+1. What is the difference between `outlet` and `yield`?
 1. What is a dynamic segment route?
 
 

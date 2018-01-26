@@ -6,17 +6,20 @@ export default Ember.Route.extend({
             {
                 name:'McDonalds', 
                 price: 1, 
-                favorite: true
+                favorite: true,
+                details:"i like big macs"
             }, 
             {
                 name:'Rubios', 
                 price: 3, 
-                favorite: false
+                favorite: false,
+                details:"taco tues"
             },
             {
                 name:'Pizza Hut',
                 price:2,
-                favorite:true
+                favorite:true,
+                details:"cheese in the crust?"
             }
         ]
 

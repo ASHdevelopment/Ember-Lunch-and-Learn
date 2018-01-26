@@ -6,17 +6,20 @@ export default Ember.Route.extend({
             {
                 name:'Hilton', 
                 price: 1, 
-                favorite: true
+                favorite: true,
+                details:"paris owns this one"
             }, 
             {
                 name:'Marriott', 
                 price: 3, 
-                favorite: false
+                favorite: false,
+                details:"ASH likes this one"
             },
             {
                 name:'Sheraton',
                 price:2,
-                favorite:true
+                favorite:true,
+                details:"We have an S"
             }
         ]
 

@@ -1,10 +1,7 @@
 <ul>
-    {{#each locations as |r|}}
-        <li>
-            {{r.name}} ({{r.price}})
-            <button onclick={{action 'toggleFav' r.name}}>toggleFav</button>
-            <button onclick={{action 'increasePrice' r.name}}>increasePrice</button>
-            <button onclick={{action 'decreasePrice' r.name}}>decreasePrice</button>
-        </li>
+    {{#each locations as |loc|}}
+        {{location-list-item
+            location = loc
+        }}
     {{/each}}
 </ul>
