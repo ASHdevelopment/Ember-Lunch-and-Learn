@@ -11,7 +11,8 @@ Router.map(function() {
   this.route('hotels');
 
   this.route('orders', function() {
-    this.route('new');
+    this.route('new', {path: '/new/:name'});
+    this.route('history');
   });
 });
 

@@ -1,8 +1,14 @@
 <h2>Hotels</h2>
 {{location-list 
     locations=model
+    favoriteToggled = (action 'favoriteToggled')
+    priceInc = (action 'priceInc')
+    priceDec = (action 'priceDec')
 }}
 
 {{location-list 
     locations=favorites
+    favoriteToggled = (action 'favoriteToggled')
+    priceInc = (action 'priceInc')
+    priceDec = (action 'priceDec')
 }}

@@ -1,7 +1,14 @@
 <ul>
     {{#each locations as |loc|}}
-        {{location-list-item
+        {{#location-list-item
             location = loc
+            favoriteToggled = favoriteToggled
+            priceInc = priceInc
+            priceDec = priceDec
         }}
+            {{#if allowOrders}}
+                {{#link-to 'orders.new' loc.name}}Order Now{{/link-to}}
+            {{/if}}
+        {{/location-list-item}}
     {{/each}}
 </ul>
