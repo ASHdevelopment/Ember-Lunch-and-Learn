@@ -1,22 +1,30 @@
 import Ember from 'ember';
 
+const {
+    get,
+    isEqual
+} = Ember
+
 export default Ember.Route.extend({
     model(){
         let arr = [
             {
                 name:'McDonalds', 
                 price: 1, 
-                favorite: true
+                favorite: true,
+                details:"i like big macs"
             }, 
             {
                 name:'Rubios', 
                 price: 3, 
-                favorite: false
+                favorite: false,
+                details:"taco tues"
             },
             {
                 name:'Pizza Hut',
                 price:2,
-                favorite:true
+                favorite:true,
+                details:"cheese in the crust?"
             }
         ]
 
@@ -26,5 +34,34 @@ export default Ember.Route.extend({
         });
 
         return arrObjs;
+    },
+    actions:{
+        toggleFav(name){
+            //grab the model from the controller until we use ember data
+            let model = get(this, 'controller.model')
+            model.forEach(r => {
+                if(isEqual(get(r, 'name'), name)){
+                    r.toggleProperty('favorite')
+                }
+            })
+        },
+        increasePrice(name){
+            let model = get(this, 'controller.model')
+            model.forEach(r => {
+                if(isEqual(get(r, 'name'), name)){
+                    r.incrementProperty('price')
+                }
+            })
+        },
+        decreasePrice(name){
+            let model = get(this, 'controller.model')
+            model.forEach(r => {
+                if(isEqual(get(r, 'name'), name)){
+                    if(get(r, 'price') > 0) {
+                        r.decrementProperty('price');
+                    }
+                }
+            })
+        }
     }
 });

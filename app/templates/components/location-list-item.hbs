@@ -1,0 +1,9 @@
+{{location.name}} ({{location.price}}) {{yield}}
+<button onclick={{action 'toggleDetails'}}>Show Details</button>
+<br>
+{{#if showDetails}}
+    {{location.details}}
+{{/if}}
+<button onclick={{action 'toggleFav' location.name}}>toggleFav</button>
+<button onclick={{action 'increasePrice' location.name}}>increasePrice</button>
+<button onclick={{action 'decreasePrice' location.name}}>decreasePrice</button>
