@@ -20,6 +20,11 @@ To get started, clone this repo locally and `ember init`. Each branch will take 
 1. What is the difference between `outlet` and `yield`?
 1. What is a dynamic segment route?
 
+## Homework
+1. Add Ember Data & Models to the restaurants route.
+1. Generate Fake Data for the restaurant route using Mirage.
+
+
 
 ## Initial Setup (cloning this repo)
 1. Make sure you have git setup on your computer
