@@ -7,12 +7,12 @@ To get started, clone this repo locally and `ember init`. Each branch will take 
 
 ## Latest Session Challenges
 1. Generate a `hotel` model and add the attributes: `name:string`, `price:number`, `favorite:boolean`, and `details:string`.
-1. In the hotel route, remove the hard-coded object and instead return hotel modal from the Ember data `store` object.
+1. In the hotel route, remove the hard-coded object and instead return hotel model from the Ember data `store` object. Hint: You need to get **all** `hotel` records.
 1. Install the `ember-cli-mirage` library.
-1. Generate a mirage factory for `hotel` then set it up to generate fake data using `Faker` for `name`, `price`, `favorite`, and `details`. When setting this up, the types of the data generated should correspond to the modal types we defined in the `hotel` model. More on `Faker.js`: https://github.com/marak/Faker.js/
+1. Generate a mirage factory for `hotel` then set it up to generate fake data using `Faker` for `name`, `price`, `favorite`, and `details`. When setting this up, the types of the data generated should correspond to the model types we defined in the `hotel` model. More on `Faker.js`: https://github.com/marak/Faker.js/
 1. In the mirage scenarios file, create 10 records named `hotel`.
 1. In the mirage config file, add a handler to request of type `get` to the `/hotels` endpoint. Make sure `hotels` is pluralized.
-1. **Homework from last session:** Add Ember Data & Models to the restaurants route. Also, generate Fake Data for the restaurant route using Mirage.
+1. **Homework from last session:** Add Ember Data & models to the restaurants route. Also, add a mirage factory for the restaurant route to generate fake data.
 1. **Bonus Homework:** Read about creating nested relationships within Ember data models.
 
 ## Latest Session Recap
