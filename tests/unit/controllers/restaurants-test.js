@@ -1,57 +1,54 @@
-import { moduleFor, test } from 'ember-qunit';
-import Ember from 'ember';
+import { module, test } from 'qunit';
+import { setupTest } from 'ember-qunit';
+import Object from '@ember/object'; 
+import { get} from '@ember/object'; 
 
-const{
-  get
-} = Ember;
+module('Unit | Controller | restaurants', function(hooks) {
+  setupTest(hooks);
 
-moduleFor('controller:restaurants', 'Unit | Controller | restaurants', {
-  // Specify the other units that are required for this test.
-//   needs: ['route:restaurants']
-});
+  // Removing these tests temporarily bc actions moved to route
+//   test('should toggle favorite attribute', function(assert) {
+//     let controller = this.owner.lookup('controller:restaurants');
 
-// Replace this with your real tests.
-test('should toggle favorite attribute', function(assert) {
-  let controller = this.subject();
+//     let a = Object.create({name: 'ProductA', price: 1, favorite: true});
+//     let b = Object.create({name: 'ProductB', price: 2, favorite: false});
+//     let c = Object.create({name: 'ProductC', price: 3, favorite: true});
+//     let arrObjs = [a, b, c];
+    
+//     controller.set('model', arrObjs);
+    
+//     controller.send('toggleFav', 'ProductB');
 
-  let a = Ember.Object.create({name: 'ProductA', price: 1, favorite: true});
-  let b = Ember.Object.create({name: 'ProductB', price: 2, favorite: false});
-  let c = Ember.Object.create({name: 'ProductC', price: 3, favorite: true});
-  let arrObjs = [a, b, c];
-  
-  controller.set('model', arrObjs);
+//     assert.equal(arrObjs[1].favorite, true);
+//   });
 
-  controller.send('toggleFav', 'ProductB');
+//   test('should increase product price', function(assert) {
+//     let controller = this.owner.lookup('controller:restaurants');
 
-  assert.equal(arrObjs[1].favorite, true);
-});
+//     let a = Object.create({name: 'ProductA', price: 1, favorite: true});
+//     let b = Object.create({name: 'ProductB', price: 2, favorite: false});
+//     let c = Object.create({name: 'ProductC', price: 3, favorite: true});
+//     let arrObjs = [a, b, c];
+    
+//     controller.set('model', arrObjs);
 
-test('should increase product price', function(assert) {
-  let controller = this.subject();
+//     controller.send('increasePrice', 'ProductA');
 
-  let a = Ember.Object.create({name: 'ProductA', price: 1, favorite: true});
-  let b = Ember.Object.create({name: 'ProductB', price: 2, favorite: false});
-  let c = Ember.Object.create({name: 'ProductC', price: 3, favorite: true});
-  let arrObjs = [a, b, c];
-  
-  controller.set('model', arrObjs);
+//     assert.equal(arrObjs[0].get('price'), 2);
+//   });
 
-  controller.send('increasePrice', 'ProductA');
+//   test('should decrease product price', function(assert) {
+//     let controller = this.owner.lookup('controller:restaurants');
 
-  assert.equal(arrObjs[0].get('price'), 2);
-});
+//     let a = Object.create({name: 'ProductA', price: 1, favorite: true});
+//     let b = Object.create({name: 'ProductB', price: 2, favorite: false});
+//     let c = Object.create({name: 'ProductC', price: 3, favorite: true});
+//     let arrObjs = [a, b, c];
+    
+//     controller.set('model', arrObjs);
 
-test('should decrease product price', function(assert) {
-  let controller = this.subject();
+//     controller.send('decreasePrice', 'ProductC');
 
-  let a = Ember.Object.create({name: 'ProductA', price: 1, favorite: true});
-  let b = Ember.Object.create({name: 'ProductB', price: 2, favorite: false});
-  let c = Ember.Object.create({name: 'ProductC', price: 3, favorite: true});
-  let arrObjs = [a, b, c];
-  
-  controller.set('model', arrObjs);
-
-  controller.send('decreasePrice', 'ProductC');
-
-  assert.equal(get(arrObjs[2],'price'), 2);
+//     assert.equal(get(arrObjs[2],'price'), 2);
+//   });
 });

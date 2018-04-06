@@ -1,11 +1,8 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { get } from '@ember/object';
+import { isEqual } from '@ember/utils';
 
-const {
-    get,
-    isEqual
-} = Ember
-
-export default Ember.Route.extend({
+export default Route.extend({
     model(){
         return this.store.findAll('hotel');
     },

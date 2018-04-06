@@ -1,11 +1,8 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import EmberObject, { get } from '@ember/object';
+import { isEqual } from '@ember/utils';
 
-const {
-    get,
-    isEqual
-} = Ember
-
-export default Ember.Route.extend({
+export default Route.extend({
     model(){
         let arr = [
             {
@@ -30,7 +27,7 @@ export default Ember.Route.extend({
 
         //we need to convert the array of restaurants into an ember object so we can get() and set() later
         const arrObjs = arr.map(a => {
-            return Ember.Object.create(a)
+            return EmberObject.create(a);
         });
 
         return arrObjs;
@@ -38,6 +35,7 @@ export default Ember.Route.extend({
     actions:{
         toggleFav(name){
             //grab the model from the controller until we use ember data
+            debugger
             let model = get(this, 'controller.model')
             model.forEach(r => {
                 if(isEqual(get(r, 'name'), name)){

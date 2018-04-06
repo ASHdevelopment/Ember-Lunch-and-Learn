@@ -1,11 +1,8 @@
-import Ember from 'ember';
+import { filterBy } from '@ember/object/computed';
+import Controller from '@ember/controller';
 
-const{
-    computed
-} = Ember;
-
-export default Ember.Controller.extend({
-    favorites:computed.filterBy('model', 'favorite'),
+export default Controller.extend({
+    favorites:filterBy('model', 'favorite'),
     actions:{
         favoriteToggled(name){
             //catch the action from the component and send it to the route
